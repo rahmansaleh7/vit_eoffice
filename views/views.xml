@@ -1,6 +1,77 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
+
+    <!-- Action Surat -->
+    <record id="action_surat_list" model="ir.actions.act_window">
+      <field name="name">Surat</field>
+      <field name="res_model">vit_eoffice.surat</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create"> Click to add a Surat</p>
+        <p>Klik tombol create untuk membuat Surat baru</p>
+      </field>
+    </record>
+
+    <!-- Action Klasifikasi Surat -->
+    <record id="action_klasifikasisurat_list" model="ir.actions.act_window">
+      <field name="name">Klasifikasi Surat</field>
+      <field name="res_model">vit_eoffice.klasifikasisurat</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create"> Click to add a Klasifikasi Surat</p>
+        <p>Klik tombol create untuk membuat Klasifikasi Surat baru</p>
+      </field>
+    </record>
+
+    <!-- Action Template Surat -->
+    <record id="action_templatesurat_list" model="ir.actions.act_window">
+      <field name="name">Template Surat</field>
+      <field name="res_model">vit_eoffice.templatesurat</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create"> Click to add a Template Surat</p>
+        <p>Klik tombol create untuk membuat Template Surat baru</p>
+      </field>
+    </record>
+
+    <!-- Menu Vit_eoffice -->
+    <menuitem id="vit_eoffice_0"
+      name="E-Office"
+      sequence="20"/>
+
+    <menuitem id="vit_eoffice_1"
+      name="Transactions"
+      parent="vit_eoffice_0"
+      sequence="20"/>
+
+    <menuitem id="vit_eoffice_surat"
+      name="Surat"
+      parent="vit_eoffice_1"
+      action="action_surat_list"
+      sequence="20" />
+
+    <!-- Konfigurasi -->      
+    <menuitem id="vit_eoffice_2"
+      name="Konfigurasi"
+      parent="vit_eoffice_0"
+      sequence="30"/>
+
+    <menuitem id="vit_eoffice_klasifikasisurat"
+      name="Klasifikasi Surat"
+      parent="vit_eoffice_2"
+      action="action_klasifikasisurat_list"
+      sequence="30" />
+
+    <menuitem id="vit_eoffice_templatesurat"
+      name="Template Surat"
+      parent="vit_eoffice_2"
+      action="action_templatesurat_list"
+      sequence="30" />
+    
+  </data>
+</odoo>
+
+<!-- explicit list view definition -->
     <!--
     <record model="ir.ui.view" id="vit_eoffice.list">
       <field name="name">vit_eoffice list</field>
@@ -56,5 +127,3 @@
     <menuitem name="Server to list" id="vit_eoffice" parent="vit_eoffice.menu_2"
               action="vit_eoffice.action_server"/>
     -->
-  </data>
-</odoo>

@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_vit_eoffice_vit_eoffice,vit_eoffice.vit_eoffice,model_vit_eoffice_vit_eoffice,,1,0,0,0
+surat_manager,surat_manager,model_vit_eoffice_surat,,1,1,1,1
+klasifikasisurat_manager,klasifikasisurat_manager,model_vit_eoffice_klasifikasisurat,,1,1,1,1
+templatesurat_manager,templatesurat_manager,model_vit_eoffice_templatesurat,,1,1,1,1
