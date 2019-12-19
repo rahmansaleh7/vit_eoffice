@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record id="surat_sequence" model="ir.sequence">
+			<field name="name">Surat sequence</field>
+			<field name="code">vit_eoffice.surat</field>
+			<field name="prefix">UMJ/</field> <!-- Code unik di awal -->
+			<field name="suffix">/2019</field> <!-- Code unik di akhir -->
+			<field name="padding">3</field> <!-- Panjang code unik -->
+			<field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+		</record>
+
+		<!-- <record id="course_sequence" model="ir.sequence">
+			<field name="name">Course squence</field>
+			<field name="code">academic.course</field>
+			<field name="prefix">Course/</field>
+			<field name="suffix">/sion</field>
+			<field name="padding">3</field>
+			<field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+		</record> -->
+
+	</data>
+</odoo>

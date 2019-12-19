@@ -1,24 +1,21 @@
 <odoo>
 	<data>
 
-		<record id="view_vit_eoffice_surat_tree" model="ir.ui.view">
-			<field name="name">vit_eoffice.surat.tree</field>
-			<field name="model">vit_eoffice.surat</field>
+		<record id="view_vit_eoffice_user_tree" model="ir.ui.view">
+			<field name="name">vit_eoffice.user.tree</field>
+			<field name="model">vit_eoffice.user</field>
 			<field name="type">tree</field>
 			<field name="priority" eval="8" />
 
 			<field name="arch" type="xml">
-				<tree string="Surat">
-					<field name="nosurat" readonly="1" />
+				<tree string="User">
 					<field name="name" />
-					<field name="tanggal" />
-					<field name="dari" />
-					<field name="state"	/>				
+					<field name="read" />				
 				</tree>
 			</field>
 		</record>
 
-		<record id="view_vit_eoffice_surat_form" model="ir.ui.view">
+		<!-- <record id="view_vit_eoffice_surat_form" model="ir.ui.view">
 			<field name="name">vit_eoffice.surat.form</field>
 			<field name="model">vit_eoffice.surat</field>
 			<field name="type">form</field>
@@ -53,7 +50,7 @@
 						<div class="oe_title">
 							<label for="nosurat"
 									string="No Surat"/>
-							<h1><field name="nosurat" readonly="1"/></h1>
+							<h1><field name="nosurat"/></h1>
 						</div>
 
 							<group>
@@ -81,7 +78,7 @@
 					</sheet>
 				</form>
 			</field>
-		</record>
+		</record> -->
 
 	</data>
 </odoo>
