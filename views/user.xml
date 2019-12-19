@@ -10,7 +10,7 @@
 			<field name="arch" type="xml">
 				<tree string="User">
 					<field name="name" />
-					<field name="read" />				
+					<!-- <field name="read" /> -->				
 				</tree>
 			</field>
 		</record>

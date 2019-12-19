@@ -11,7 +11,9 @@ class Surat(models.Model):
 	nosurat = fields.Char(string="No Surat", required=False, )
 	name = fields.Char(string="Perihal", required=True, )
 	tanggal = fields.Date(string="Tanggal", required=True, )
-	dari	= fields.Char(string="Dari", required=True, )
+	dari	= fields.Many2one(comodel_name="vit_eoffice.user",
+							string="Dari", 
+							required=True, )
 	klasifikasisurat = fields.Many2one(comodel_name="vit_eoffice.klasifikasisurat",
 									string="Klasifikasi Surat", 
 									required="True")
@@ -20,6 +22,10 @@ class Surat(models.Model):
 									required="True")
 	isisurat = fields.Text(string="Isi Surat", )
 	history = fields.Char(string="History", )
+	kepada = fields.One2many(comodel_name="vit_eoffice.user",
+							inverse_name="name",
+							required=False,
+							ondelete="cascade", )
 
 	state = fields.Selection(string="Status", 
 							selection=SURAT_STATES,
@@ -64,9 +70,12 @@ class Templatesurat(models.Model):
 
 class User(models.Model):
 	_name = 'vit_eoffice.user'
+	# _inherit = 'res.partner'
 
-	name = fields.Char(string="Nama", required=True, )
-	read = fields.Boolean(string="Read", required=True, )
+	name = fields.Many2one(comodel_name="vit_eoffice.surat",
+						string="Nama", 
+						required=True, )
+	# read = fields.Boolean(string="Read", )
 
 
 

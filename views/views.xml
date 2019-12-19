@@ -34,6 +34,17 @@
       </field>
     </record>
 
+    <!-- Action User -->
+    <record id="action_user_list" model="ir.actions.act_window">
+      <field name="name">User</field>
+      <field name="res_model">vit_eoffice.user</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create"> Click to add a User</p>
+        <p>Klik tombol create untuk membuat User baru</p>
+      </field>
+    </record>
+
     <!-- Menu Vit_eoffice -->
     <menuitem id="vit_eoffice_0"
       name="E-Office"
@@ -66,6 +77,12 @@
       name="Template Surat"
       parent="vit_eoffice_2"
       action="action_templatesurat_list"
+      sequence="30" />
+
+    <menuitem id="vit_eoffice_user"
+      name="User"
+      parent="vit_eoffice_2"
+      action="action_user_list"
       sequence="30" />
     
   </data>
