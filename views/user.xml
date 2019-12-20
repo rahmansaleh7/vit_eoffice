@@ -10,6 +10,7 @@
 			<field name="arch" type="xml">
 				<tree string="User">
 					<field name="name" />
+					<field name="status" />
 					<!-- <field name="read" /> -->				
 				</tree>
 			</field>

@@ -30,6 +30,7 @@
         'views/templatesurat.xml',
         'views/user.xml',
         'data/sequence.xml',
+        'report/surat.xml',
         'security/ir.model.access.csv',
     ],
     # only loaded in demonstration mode

@@ -70,20 +70,10 @@
 
 							<group>
 								<group>
-									<label for="kepada"
-									string="Kepada"/>
-									<notebook>
-										<page string="">
-											<field name="kepada" />
-										</page>
-									</notebook>
+									<field name="kepada" />
 								</group>
 								<group>
-									<notebook>
-										<page string="Isi Surat">
-											<field name="isisurat" />
-										</page>
-									</notebook>
+									<field name="tembusan" />										
 								</group>
 							</group>
 
@@ -93,7 +83,13 @@
 								</page>
 
 								<page string="History Surat">
-									<field name="history" />
+									<!-- <field name="history">
+									<tree>
+                                        <field name="name"/>
+                                        <field name="user_id"/>
+                                        <field name="create_date"/>
+                                    </tree>
+                                	</field> -->
 								</page>
 							</notebook>
 						
