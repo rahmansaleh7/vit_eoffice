@@ -3,24 +3,25 @@
 	<data>
 
 		<record id="surat_sequence" model="ir.sequence">
-			<field name="name">Surat sequence</field>
+			<field name="name">Surat Sequence</field>
 			<field name="code">vit_eoffice.surat</field>
-			<field name="prefix">UMJ/</field> <!-- Code unik di awal -->
+			<field name="prefix">UMJ/%(year)s/%(month)s/</field><!-- Code unik di awal -->
+			<field name="padding">3</field> <!-- Panjang code unik -->
+			<field name="next_number_actual">1</field>
+			<field name="number_increment">1</field>
+			<field name="implementation">standard</field>
+		</record>
+
+
+		<record id="replysurat_sequence" model="ir.sequence">
+			<field name="name">Surat sequence</field>
+			<field name="code">vit_eoffice.replysurat</field>
+			<field name="prefix">UMJ/R/</field> <!-- Code unik di awal -->
 			<field name="suffix">/2019</field> <!-- Code unik di akhir -->
 			<field name="padding">3</field> <!-- Panjang code unik -->
 			<field eval="1" name="number_next"/>
             <field eval="1" name="number_increment"/>
 		</record>
-
-		<!-- <record id="course_sequence" model="ir.sequence">
-			<field name="name">Course squence</field>
-			<field name="code">academic.course</field>
-			<field name="prefix">Course/</field>
-			<field name="suffix">/sion</field>
-			<field name="padding">3</field>
-			<field eval="1" name="number_next"/>
-            <field eval="1" name="number_increment"/>
-		</record> -->
 
 	</data>
 </odoo>
