@@ -70,26 +70,30 @@
 
 							<group>
 								<group>
-									<!-- <field name="kepada" /> -->
+									<field name="kepada">
+										<tree editable="bottom">
+											<field name="user_id" />
+											<field name="read_status" />
+										</tree>
+									</field>
 								</group>
 								<group>
-									<!-- <field name="tembusan" /> -->										
+									<field name="tembusan">
+										<tree editable="bottom">
+											<field name="user_id" />
+											<field name="read_status" />
+										</tree>
+									</field>										
 								</group>
 							</group>
 
 							<notebook>
 								<page string="Isi Surat">
-									<field name="isisurat" />
+									<field name="isisurat" widget="html"/>
 								</page>
 
 								<page string="History Surat">
-									<!-- <field name="history">
-									<tree>
-                                        <field name="name"/>
-                                        <field name="user_id"/>
-                                        <field name="create_date"/>
-                                    </tree>
-                                	</field> -->
+									
 								</page>
 							</notebook>
 						

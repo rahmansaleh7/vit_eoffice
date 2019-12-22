@@ -2,3 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 surat_manager,surat_manager,model_vit_eoffice_surat,,1,1,1,1
 klasifikasisurat_manager,klasifikasisurat_manager,model_vit_eoffice_klasifikasisurat,,1,1,1,1
 templatesurat_manager,templatesurat_manager,model_vit_eoffice_templatesurat,,1,1,1,1
+kepada_manager,kepada_manager,model_vit_eoffice_kepada,,1,1,1,1
+tembusan_manager,tembusan_manager,model_vit_eoffice_tembusan,,1,1,1,1

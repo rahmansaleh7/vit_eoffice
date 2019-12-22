@@ -22,6 +22,16 @@ class Surat(models.Model):
 									required=True, )
 	isisurat = fields.Text(string="Isi Surat", )
 	history = fields.Char(string="History", )
+	kepada = fields.One2many(comodel_name="vit_eoffice.kepada", 
+									inverse_name="doc_id", 
+									string="Kepada", 
+									ondelete="cascade", 
+									states={'draft': [('readonly', False)]})
+	tembusan = fields.One2many(comodel_name="vit_eoffice.tembusan", 
+								inverse_name="doc_id", 
+								string="Tembusan", 
+								ondelete="cascade", 
+								states={'draft': [('readonly', False)]})
 	# kepada = fields.One2many(comodel_name="res.users",
 	# 						inverse_name="res.users",
 	# 						required=False,
@@ -106,40 +116,23 @@ class Templatesurat(models.Model):
 	tempsurat = fields.Text(string="Template Surat", )
 
 
+class to_user(models.Model):
+	_name = 'vit_eoffice.kepada'
+	_rec_name = 'user_id'
+	
+	user_id = fields.Many2one(comodel_name="res.users", 
+								string="User")
+	doc_id = fields.Many2one(comodel_name="vit_eoffice.surat", 
+								string="Surat")
+	read_status = fields.Boolean(string="Read")
+	
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# class vit_eoffice(models.Model):
-#     _name = 'vit_eoffice.vit_eoffice'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         self.value2 = float(self.value) / 100
+class cc_user(models.Model):
+	_name = 'vit_eoffice.tembusan'
+	_rec_name = 'user_id'
+	
+	user_id = fields.Many2one(comodel_name="res.users", 
+								string="User")
+	doc_id = fields.Many2one(comodel_name="vit_eoffice.surat", 
+								string="Surat")
+	read_status = fields.Boolean(string="Read")
