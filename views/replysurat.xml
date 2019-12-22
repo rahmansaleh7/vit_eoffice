@@ -1,0 +1,104 @@
+<!-- <odoo>
+	<data>
+
+		<record id="view_vit_eoffice_replysurat_tree" model="ir.ui.view">
+			<field name="name">vit_eoffice.replysurat.tree</field>
+			<field name="model">vit_eoffice.replysurat</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="8" />
+
+			<field name="arch" type="xml">
+				<tree string="Surat Balasan">
+					<field name="name" readonly="1" />
+					<field name="perihal" />
+					<field name="tanggal" />
+					<field name="dari" />
+					<field name="sumbersurat" />
+					<field name="state"	/>				
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_vit_eoffice_replysurat_form" model="ir.ui.view">
+			<field name="name">vit_eoffice.replysurat.form</field>
+			<field name="model">vit_eoffice.replysurat</field>
+			<field name="type">form</field>
+			<field name="priority" eval="8" />
+
+			<field name="arch" type="xml">
+				<form string="Surat Balasan">
+
+				<header>
+					<button string="Confirm"
+							type="object"
+							name="action_needapproval"
+							states="draft" />
+					<button string="Setuju"
+							type="object"
+							name="action_unread"
+							states="needapproval" />
+					<button string="Sudah Dibaca"
+							type="object"
+							name="action_read"
+							states="unread" />
+					<button string="Batal" 
+							type="object" 
+							name="action_draft"
+							states="needapproval" />
+					<field name="state" widget="statusbar" />
+				</header>
+
+				
+					<sheet>
+
+						<div class="oe_title">
+							<label for="name"
+									string="No Surat"/>
+							<h1><field name="name" readonly="1"/></h1>
+						</div>
+
+							<group>
+								<group>
+									<field name="perihal" />
+									<field name="tanggal" />
+									<field name="dari" />
+								</group>
+								<group>
+									<field name="klasifikasisurat" />
+									<field name="templatesurat" />
+									<field name="sumbersurat" />
+								</group>
+							</group>
+
+							<group>
+								<group>
+									<field name="kepada" />
+								</group>
+								<group>
+									<field name="tembusan" />										
+								</group>
+							</group>
+
+							<notebook>
+								<page string="Isi Surat">
+									<field name="isisurat" />
+								</page>
+
+								<page string="History Surat">
+									<! <field name="history">
+									<tree>
+                                        <field name="name"/>
+                                        <field name="user_id"/>
+                                        <field name="create_date"/>
+                                    </tree>
+                                	</field> -->
+								<!-- </page>
+							</notebook>
+						
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</odoo> --> 
