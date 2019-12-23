@@ -44,6 +44,16 @@
 							type="object" 
 							name="action_draft"
 							states="needapproval" />
+					<button string="Reply" 
+							type="object" 
+							name="action_reply" 
+							states="read" />
+					attrs="{'invisible': ['|', ('spm_exists', '=', True), ('state','&lt;&gt;','done')]}"
+					<button string="Reply" 
+							type="object" 
+							name="action_reply" 
+							class="oe_highlight" 
+							states="read" />
 					<field name="state" widget="statusbar" />
 				</header>
 
@@ -65,6 +75,7 @@
 								<group>
 									<field name="klasifikasisurat" />
 									<field name="templatesurat" />
+									<field name="sumbersurat" />
 								</group>
 							</group>
 
